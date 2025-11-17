@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soal Administrasi Sistem Jaringan — XII TKJ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Soal Administrasi Sistem Jaringan</h1>
+      <p class="subtitle">Kelas XII TKJ — Koleksi Kisi-kisi & Soal</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>Tentang</h2>
+      <p>Website ini menampilkan kumpulan soal/kisi-kisi Administrasi Sistem Jaringan. Anda bisa menambahkan file PDF soal dan tautan ke materi.</p>
+    </section>
+
+    <section id="soal-list">
+      <h2>Daftar Soal (Contoh)</h2>
+
+      <div id="soalCards" class="grid">
+        <!-- Kartu soal akan di-generate oleh script.js -->
+      </div>
+    </section>
+
+    <section id="pdf">
+      <h2>PDF Soal</h2>
+      <p>Jika Anda sudah mengunggah file PDF ke repository (mis. di folder <code>/assets</code>), berikan nama file di bawah untuk menampilkan preview.</p>
+
+      <div class="pdf-controls">
+        <input id="pdfInput" placeholder="masukkan path file PDF di repo (mis: assets/Kisi-kisi_ASJ_2025.pdf)" />
+        <button id="showPdf">Tampilkan PDF</button>
+      </div>
+
+      <div id="pdfPreview" class="pdf-preview" hidden>
+        <iframe id="pdfFrame" src="" title="PDF Soal" frameborder="0"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 SMK / Disusun otomatis</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
