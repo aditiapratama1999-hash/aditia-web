@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soal & Jawaban — Teknologi Layanan Jaringan</title>
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,#021024 0%, #061229 100%);color:#e6eef6;margin:0;padding:24px}
+    .container{max-width:980px;margin:0 auto}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:0}
+    .controls{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap}
+    input[type=search]{padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:var(--glass);color:inherit;min-width:220px}
+    button{background:var(--accent);color:#022;border:none;padding:10px 12px;border-radius:10px;cursor:pointer}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .q{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .q .meta{color:var(--muted);font-size:13px}
+    .question{font-weight:600;margin:6px 0}
+    .options{margin:8px 0 12px;color:var(--muted)}
+    .answer{display:none;padding:10px;border-radius:8px;background:rgba(6,182,212,0.08);color:var(--accent);font-weight:700}
+    .show .answer{display:block}
+    .toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:6px 8px;border-radius:8px;cursor:pointer}
+    footer{color:var(--muted);margin-top:20px;font-size:13px}
+    @media (max-width:640px){h1{font-size:18px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Soal & Jawaban — Teknologi Layanan Jaringan</h1>
+        <p class="lead">Soal pilihan ganda (1–40) dan kunci jawaban. Klik "Tampilkan Jawaban" untuk melihat.</p>
+      </div>
+    </header>
+
+    <div class="controls">
+      <input id="search" type="search" placeholder="Cari kata kunci (mis. soft switch, Trixbox)..." />
+      <button id="showAll">Tampilkan Semua Jawaban</button>
+      <button id="hideAll">Sembunyikan Semua Jawaban</button>
+      <button id="print">Cetak / Simpan PDF</button>
+    </div>
+
+    <div id="list"></div>
+
+    
+
+    <section id=\"essay\" style=\"margin-top:32px;\">
+      <h2>B. ESSAY</h2>
+      <div class=\"card\"><b>1.</b> Berapa Nomor Telepon dari TKJ1?<br><b>Jawaban:</b> 123</div>
+      <div class=\"card\"><b>2.</b> Berapa Nomor Telepon dari TKJ2?<br><b>Jawaban:</b> 124</div>
+      <div class=\"card\"><b>3.</b> Apa nama password dari TKJ1?<br><b>Jawaban:</b> smkdt1</div>
+      <div class=\"card\"><b>4.</b> Apa nama password dari TKJ2?<br><b>Jawaban:</b> smkdt2</div>
+      <div class=\"card\"><b>5.</b> Apa nama username dari nomor ekstension 123?<br><b>Jawaban:</b> tkj1</div>
+    </section>
+
+    <footer>Ingin versi .docx atau penambahan essay otomatis? Minta saja dan saya buatkan.</footer>
+  </div>
+
+  <script>
+    const data = [
+      {q: "1. Manakah pernyataan berikut yang benar mengenai kelebihan soft switch?", opts: ["a. Bergantung pada perangkat keras khusus","b. Mudah diintegrasikan dengan perangkat keras","c. Membutuhkan pemeliharaan fisik yang intensif","d. Tidak fleksibel dalam penanganan panggilan","e. Memerlukan lisensi berbayar mahal"], ans: "b"},
+      {q: "2. Fungsi utama dari Firewall VoIP adalah…", opts: ["a. Mencegah serangan ransomware","b. Melindungi data pengguna","c. Mengontrol dan memonitor lalu lintas VoIP","d. Meningkatkan kecepatan internet","e. Mengatur prioritas bandwidth"], ans: "c"},
+      {q: "3. Risiko utama jika Firewall VoIP tidak dikonfigurasi dengan benar adalah…", opts:["a. Penurunan kecepatan internet","b. Potensi kebocoran data dan akses tidak sah","c. Kehilangan sinyal seluler","d. Penurunan kualitas suara","e. Bandwidth berkurang"], ans: "b"},
+      {q: "4. Fungsi utama dari Trixbox dalam lingkungan server VoIP adalah…", opts:["a. Mengelola database","b. Menyediakan layanan email","c. Menyediakan layanan VoIP","d. Mengelola file server","e. Menyediakan server DNS"], ans: "c"},
+      {q: "5. Soft switch biasanya digunakan dalam lingkungan…", opts:["a. Rumah tangga","b. Perusahaan besar","c. Hanya laboratorium riset","d. Sektor pemerintah saja","e. Komunikasi radio"], ans: "b"},
+      {q: "6. Peran Softswitch dalam implementasi VoIP adalah…", opts:["a. Memantau lalu lintas internet","b. Mengelola panggilan suara melalui jaringan IP","c. Mencegah serangan siber","d. Menyediakan layanan email","e. Mengatur hak akses pengguna"], ans: "b"},
+      {q: "7. Bagaimana firewall VoIP melindungi dari phishing suara?", opts:["a. Memblokir seluruh panggilan","b. Menyaring email masuk","c. Mendeteksi dan mencegah panggilan palsu","d. Memblokir nomor tidak dikenal","e. Menghapus pesan suara otomatis"], ans: "c"},
+      {q: "8. Keuntungan utama menggunakan Trixbox dibanding PBX konvensional adalah…", opts:["a. Lebih murah","b. Lebih aman","c. Lebih lambat","d. Lebih rumit","e. Membutuhkan perangkat mahal"], ans: "a"},
+      {q: "9. Kelebihan yang membuat soft switch umum digunakan adalah…", opts:["a. Dapat beroperasi tanpa internet","b. Fleksibilitas dalam penyesuaian panggilan","c. Efisiensi biaya & manajemen panggilan","d. Meningkatkan kualitas layanan seluler","e. Mengurangi sinyal jaringan"], ans: "c"},
+      {q: "10. Apa yang dimaksud dengan Trixbox?", opts:["a. Sistem operasi open-source","b. Perangkat keras komunikasi","c. Platform telepon IP berbasis software","d. Aplikasi manajemen database","e. Sistem keamanan jaringan"], ans: "c"},
+      {q: "11. Risiko keamanan VoIP tanpa firewall adalah…", opts:["a. Pencurian sinyal WiFi","b. Panggilan suara yang tidak diinginkan","c. Pencurian data dan akses tidak sah","d. Gangguan kualitas suara","e. Jaringan menjadi lambat"], ans: "c"},
+      {q: "12. Manfaat utama implementasi soft switch adalah…", opts:["a. Membatasi jumlah panggilan","b. Menyaring pesan teks","c. Menyediakan sinyal analog","d. Menyederhanakan infrastruktur PBX","e. Mematikan layanan VoIP"], ans: "d"},
+      {q: "13. Risiko VoIP tanpa proteksi firewall adalah…", opts:["a. Penurunan kualitas suara","b. Kemungkinan serangan terhadap sistem VoIP","c. Penurunan kecepatan internet","d. Peningkatan pesan teks spam","e. Internet menjadi instabil"], ans: "b"},
+      {q: "14. Manfaat utama soft switch adalah…", opts:["a. Kecepatan transfer data tinggi","b. Skalabilitas dan fleksibilitas","c. Ketergantungan pada perangkat keras","d. Isolasi jaringan","e. Memperkuat sinyal radio"], ans: "b"},
+      {q: "15. Bagaimana Trixbox membantu perusahaan dalam mengelola panggilan?", opts:["a. Mengurangi pegawai operator","b. Mengoptimalkan pembagian panggilan","c. Menghapus jalur komunikasi","d. Memutus koneksi otomatis","e. Mengatur email masuk"], ans: "b"},
+      {q: "16. Kurang fleksibel merupakan kekurangan dari…", opts:["a. Traditional PBX","b. IP PBX","c. Hosted PBX","d. Virtual PBX","e. Hybrid PBX"], ans: "a"},
+      {q: "17. PBX yang memerlukan instalasi dan pemeliharaan intensif adalah…", opts:["a. Traditional PBX","b. IP PBX","c. Hosted PBX","d. Virtual PBX","e. Hybrid PBX"], ans: "a"},
+      {q: "18. PBX yang menggunakan protokol IP untuk mengirimkan suara adalah…", opts:["a. Traditional PBX","b. IP PBX","c. Hosted PBX","d. Virtual PBX","e. Hybrid PBX"], ans: "b"},
+      {q: "19. PBX yang memerlukan instalasi & pemeliharaan intensif adalah…", opts:["a. Traditional PBX","b. IP PBX","c. Hosted PBX","d. Virtual PBX","e. Hybrid PBX"], ans: "a"},
+      {q: "20. VoIP PBX juga dikenal dengan nama…", opts:["a. Traditional PBX","b. IP PBX","c. Hosted PBX","d. Virtual PBX","e. Hybrid PBX"], ans: "b"},
+      {q: "21. PBX yang lebih hemat biaya karena memakai infrastruktur yang sudah ada…", opts:["a. Traditional PBX","b. IP PBX","c. Hosted PBX","d. Virtual PBX","e. Hybrid PBX"], ans: "b"},
+      {q: "22. Cloud PBX juga dikenal dengan nama…", opts:["a. Traditional PBX","b. IP PBX","c. Hosted PBX","d. Virtual PBX","e. Hybrid PBX"], ans: "d"},
+      {q: "23. PBX yang cocok untuk bisnis kecil–menengah tanpa biaya awal besar…", opts:["a. Traditional PBX","b. IP PBX","c. Hosted PBX","d. Virtual PBX","e. Hybrid PBX"], ans: "c"},
+      {q: "24. PBX yang tidak memerlukan perangkat keras fisik lagi adalah…", opts:["a. Traditional PBX","b. IP PBX","c. Hosted PBX","d. Virtual PBX","e. Hybrid PBX"], ans: "d"},
+      {q: "25. Dengan VoIP, biaya lebih … untuk sambungan langsung jarak jauh.", opts:["a. on","b. of","c. over","d. or","e. off"], ans: "e"},
+      {q: "26. Generasi lanjutan VoIP adalah…", opts:["a. GSM","b. CDMA","c. 3G","d. NGN","e. 2G"], ans: "d"},
+      {q: "27. VoIP adalah Voice … Internet Protocol.", opts:["a. asterisk","b. real time","c. PBX","d. SIP","e. data digital"], ans: "b"},
+      {q: "28. Kualitas suara VoIP menurun karena…", opts:["a. mahal","b. rendah","c. baik","d. bagus","e. tinggi"], ans: "b"},
+      {q: "29. Teknik kompresi membuat suara hanya butuh sekitar … kbps.", opts:["a. 8","b. 16","c. 32","d. 64","e. 128"], ans: "a"},
+      {q: "30. Dengan adanya … jaringan VoIP bisa disambungkan ke PABX kantor.", opts:["a. DNS","b. DHCP","c. FTP","d. gateway","e. PBX"], ans: "d"},
+      {q: "31. Kualitas suara VoIP tidak sejernih … karena bandwidth kecil.", opts:["a. kompresi suara","b. congestion","c. data yang besar","d. sip","e. PABX"], ans: "e"},
+      {q: "32. Asterisk adalah software … yang berjalan di Linux.", opts:["a. open source","b. demo","c. close source","d. berbayar","e. sewa"], ans: "a"},
+      {q: "33. Instalasi paket Asterisk membutuhkan keping DVD ke….", opts:["a. 1","b. 2","c. 1 & 2","d. 2 & 3","e. 1 & 3"], ans: "c"},
+      {q: "34. Perintah untuk menginstal Asterisk adalah apt-get …. asterisk", opts:["a. remove","b. purge","c. clean","d. autoremove","e. install"], ans: "e"},
+      {q: "35. Nomor telepon tkj1 adalah…", opts:["a. 124","b. 123","c. 125","d. 126","e. 127"], ans: "b"},
+      {q: "36. Nomor telepon tkj2 adalah…", opts:["a. 124","b. 123","c. 125","d. 126","e. 127"], ans: "a"},
+      {q: "37. Parameter yang menunjukkan kata sandi adalah…", opts:["a. secret","b. smkdt1","c. smkdt2","d. tkj1","e. tkj2"], ans: "a"},
+      {q: "38. Kata sandi untuk tkj1 adalah…", opts:["a. 124","b. tkj1","c. tkj2","d. smkdt1","e. smkdt2"], ans: "d"},
+      {q: "39. Kata sandi untuk tkj2 adalah…", opts:["a. 123","b. 124","c. 125","d. smkdt1","e. smkdt2"], ans: "e"},
+      {q: "40. Jika PC memiliki webcam, maka user bisa melakukan…", opts:["a. chat","b. call","c. chat call","d. video call","e. foto selfie"], ans: "d"}
+    ];
+
+    const list = document.getElementById('list');
+    function render(items){
+      list.innerHTML = '';
+      items.forEach((item, idx) =>{
+        const card = document.createElement('div'); card.className='card';
+        const qmeta = document.createElement('div'); qmeta.className='q';
+        const qleft = document.createElement('div');
+        const qnum = document.createElement('div'); qnum.className='meta'; qnum.textContent = `Soal ${idx+1}`;
+        const qtxt = document.createElement('div'); qtxt.className='question'; qtxt.textContent = item.q;
+        const opts = document.createElement('div'); opts.className='options'; opts.innerHTML = item.opts.join(' | ');
+        const btn = document.createElement('button'); btn.className='toggle'; btn.textContent = 'Tampilkan Jawaban';
+        const ans = document.createElement('div'); ans.className='answer'; ans.textContent = `Jawaban: ${item.ans}`;
+
+        btn.addEventListener('click', ()=>{
+          card.classList.toggle('show');
+          btn.textContent = card.classList.contains('show') ? 'Sembunyikan Jawaban' : 'Tampilkan Jawaban';
+        });
+
+        qleft.appendChild(qnum); qleft.appendChild(qtxt); qleft.appendChild(opts);
+        qmeta.appendChild(qleft); qmeta.appendChild(btn);
+        card.appendChild(qmeta); card.appendChild(ans);
+        list.appendChild(card);
+      })
+    }
+
+    render(data);
+
+    document.getElementById('showAll').onclick = ()=>{
+      document.querySelectorAll('.card').forEach(c=>{c.classList.add('show'); c.querySelector('.toggle').textContent='Sembunyikan Jawaban'})
+    }
+    document.getElementById('hideAll').onclick = ()=>{
+      document.querySelectorAll('.card').forEach(c=>{c.classList.remove('show'); c.querySelector('.toggle').textContent='Tampilkan Jawaban'})
+    }
+    document.getElementById('print').onclick = ()=> window.print();
+
+    document.getElementById('search').addEventListener('input', (e)=>{
+      const v = e.target.value.toLowerCase().trim();
+      if(!v) return render(data);
+      const filtered = data.filter(d=> (d.q + ' ' + d.opts.join(' ')).toLowerCase().includes(v));
+      render(filtered);
+    });
+  </script>
+</body>
+</html>
