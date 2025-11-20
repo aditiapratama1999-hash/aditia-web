@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soal dan Jawaban AIJ — XII TKJ</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7dd3fc}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#071127 0%, #0b1630 100%); color:#e6eef8; margin:0; padding:24px}
+    .wrap{max-width:980px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 0;font-size:13px}
+    .controls{display:flex;gap:8px}
+    button{background:var(--accent);border:0;padding:8px 12px;border-radius:8px;color:#04202a;font-weight:600;cursor:pointer}
+    .card{background:rgba(255,255,255,0.03);padding:14px;border-radius:12px;margin-top:12px;border:1px solid rgba(255,255,255,0.03)}
+    .q{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:start}
+    .question{font-weight:700}
+    .options{margin:8px 0 0;padding-left:16px;color:var(--muted)}
+    .answer{margin-top:10px;padding:10px;border-radius:8px;background:rgba(125,211,252,0.06);color:var(--accent);display:none}
+    .show .answer{display:block}
+    .small{font-size:13px;color:var(--muted)}
+    .toggle-all{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 10px;color:var(--muted);border-radius:8px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:10px}
+    @media (max-width:600px){body{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Soal Pilihan Ganda — Administrasi Infrastruktur Jaringan (AIJ)</h1>
+        <p class="lead">Versi website: soal + kunci jawaban interaktif. (Sumber: Kisi-kisi Soal AIJ yang Anda unggah)</p>
+      </div>
+      <div class="controls">
+        <button id="printBtn">Print / Save as PDF</button>
+        <button id="toggleAll" class="toggle-all">Tampilkan Semua Jawaban</button>
+      </div>
+    </header>
+
+    <div class="meta">Catatan: beberapa soal bergambar saya sisakan placeholder — unggah gambar jika Anda ingin saya masukkan juga.</div>
+
+    <section class="card" id="questions">
+      <!-- Questions generated from uploaded kisi-kisi -->
+
+      <!-- 1-10 (jawaban sesuai kisi-kisi) -->
+      <div class="item" data-answer="a">
+        <div class="q">
+          <div>
+            <div class="question">1. Berikut yang bukan syarat sebuah komputer jaringan lokal saling terhubung, yaitu ....</div>
+            <div class="options">
+              a. memiliki alamat host yang sama<br>
+              b. memiliki jaringan alamat yang sama<br>
+              c. memiliki alamat broadcast yang sama<br>
+              d. menjalankan protokol jaringan yang sama<br>
+              e. menggunakan sistem pengalamatan yang sama
+            </div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: a. memiliki alamat host yang sama</div>
+      </div>
+
+      <div class="item" data-answer="b">
+        <div class="q">
+          <div>
+            <div class="question">2. Jika perusahaan memiliki 300 komputer, mekanisme paling efektif adalah..</div>
+            <div class="options">
+              a. NAT<br>
+              b. PAT<br>
+              c. routing statis<br>
+              d. routing dinamis<br>
+              e. internet gateway
+            </div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: b. PAT</div>
+      </div>
+
+      <div class="item" data-answer="b">
+        <div class="q">
+          <div>
+            <div class="question">3. NAT yang berfungsi menyambungkan sebuah perangkat agar dapat diakses dari internet adalah....</div>
+            <div class="options">a. basic NAT<br>b. static NAT<br>c. dynamic NAT<br>d. one to many NAT<br>e. many to many NAT</div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: b. static NAT</div>
+      </div>
+
+      <div class="item" data-answer="d">
+        <div class="q">
+          <div>
+            <div class="question">4. Fitur yang mengubah akses koneksi dari jaringan publik ke jaringan lokal adalah....</div>
+            <div class="options">a. Block Site<br>b. Redirect<br>c. srcnat<br>d. Dstnat<br>e. Jump</div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: d. Dstnat</div>
+      </div>
+
+      <div class="item" data-answer="b">
+        <div class="q">
+          <div>
+            <div class="question">5. Fungsi dari Firewall yang tepat adalah...</div>
+            <div class="options">a. Penghubung antara dua jaringan sekaligus<br>b. Mengatur dan mengontrol lalu lintas jaringan<br>c. Penghubung antara dua jaringan yang berbeda<br>d. Program untuk mendapatkan konten dari internet<br>e. Penghubung antara dua jaringan ke internet dengan satu IP</div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: b. Mengatur dan mengontrol lalu lintas jaringan</div>
+      </div>
+
+      <div class="item" data-answer="a">
+        <div class="q">
+          <div>
+            <div class="question">6. Firewall NAT yang merubah alamat IP sumber (one-to-one) disebut ...</div>
+            <div class="options">a. Src-nat<br>b. Redirect<br>c. Masquerade<br>d. Dst-nat<br>e. Reject</div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: a. Src-nat</div>
+      </div>
+
+      <div class="item" data-answer="c">
+        <div class="q">
+          <div>
+            <div class="question">7. Firewall NAT yang merubah IP sumber saat jumlah client &gt;1 adalah ...</div>
+            <div class="options">a. Src-nat<br>b. Redirect<br>c. Masquerade<br>d. Dst-nat<br>e. Reject</div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: c. Masquerade</div>
+      </div>
+
+      <div class="item" data-answer="d">
+        <div class="q">
+          <div>
+            <div class="question">8. Firewall NAT yang merubah alamat IP tujuan menjadi router itu sendiri disebut ...</div>
+            <div class="options">a. Src-nat<br>b. Redirect<br>c. Masquerade<br>d. Dst-nat<br>e. Reject</div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: d. Dst-nat</div>
+      </div>
+
+      <div class="item" data-answer="a">
+        <div class="q">
+          <div>
+            <div class="question">9. Action yang digunakan untuk menolak paket tanpa pemberitahuan disebut ...</div>
+            <div class="options">a. Drop<br>b. Redirect<br>c. Logging<br>d. Accept view<br>e. Reject</div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: a. Drop</div>
+      </div>
+
+      <div class="item" data-answer="e">
+        <div class="q">
+          <div>
+            <div class="question">10. Action yang menolak paket dengan pemberitahuan disebut ...</div>
+            <div class="options">a. Drop<br>b. Redirect<br>c. Logging<br>d. Accept view<br>e. Reject</div>
+          </div>
+          <div><button class="showBtn">Tampilkan Jawaban</button></div>
+        </div>
+        <div class="answer">Jawaban: e. Reject</div>
+      </div>
+
+      <!-- 11-20 -->
+      <div class="item" data-answer="c">
+        <div class="q"><div><div class="question">11. Firewall yang dapat kita gunakan untuk mencatat suatu aktivitas, misalnya ingin mencatat siapa saja yang melakukan ping ke router adalah...</div><div class="options">a. Drop<br>b. Redirect<br>c. Logging<br>d. Accept view<br>e. Reject</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: c. Logging</div></div>
+
+      <div class="item" data-answer="c">
+        <div class="q"><div><div class="question">12. Dibawah ini merupakan kelebihan GUI dibandingkan Text adalah...</div><div class="options">a. Sulit digunakan<br>b. Konfigurasi sulit<br>c. User friendly<br>d. Tampilan kurang menarik<br>e. Semua benar</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: c. User friendly</div></div>
+
+      <div class="item" data-answer="a">
+        <div class="q"><div><div class="question">13. Memiliki fungsi untuk mengubah destination address pada sebuah paket data (digunakan untuk membuat host lokal dapat diakses dari internet) disebut...</div><div class="options">a. DSTNAT<br>b. DHCP NAT<br>c. FILTERING<br>d. SCNAT<br>e. REDIRECT</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: a. DSTNAT</div></div>
+
+      <div class="item" data-answer="tbd">
+        <div class="q"><div><div class="question">14. (Soal bergambar) Gambar di bawah ini adalah Router.... (unggah gambar untuk jawaban pasti)</div><div class="options">a. RB750gr2<br>b. RB750gr3<br>c. RB941Ui-2ND<br>d. RB940i<br>e. RB951Ui-2ND</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: (gambar tidak tersedia — tambahkan foto router untuk jawaban akurat)</div></div>
+
+      <div class="item" data-answer="a">
+        <div class="q"><div><div class="question">15. Cara mengakses Router Mikrotik dibawah ini kecuali...</div><div class="options">a. Komputer<br>b. Web Based<br>c. Telnet<br>d. SSH<br>e. Winbox</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban (perkiraan): a. Komputer — opsi ini tampak tidak sesuai metode akses; jika maksud soal berbeda, unggah konteks/gambar.</div></div>
+
+      <div class="item" data-answer="d">
+        <div class="q"><div><div class="question">16. Model arsitektural jaringan komputer yang dikembangkan sebagai standar komunikasi data adalah...</div><div class="options">a. Barisan<br>b. Tahapan<br>c. ISO<br>d. OSI<br>e. IEEE</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: d. OSI</div></div>
+
+      <div class="item" data-answer="a">
+        <div class="q"><div><div class="question">17. Berapakah jumlah host dari network address 192.168.1.64/27?</div><div class="options">a. 30<br>b. 31<br>c. 33<br>d. 36<br>e. 39</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: a. 30 (prefix /27 → 32 alamat, 30 host usable)</div></div>
+
+      <div class="item" data-answer="b">
+        <div class="q"><div><div class="question">18. Router beroperasi pada layer....</div><div class="options">a. Data Link<br>b. Network<br>c. Data Center<br>d. Physical<br>e. Transport</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: b. Network</div></div>
+
+      <div class="item" data-answer="a">
+        <div class="q"><div><div class="question">19. Pembagian sebuah network address menjadi kelompok-kelompok network lebih kecil biasa dikenal dengan istilah...</div><div class="options">a. Subnet ID<br>b. Mac Address<br>c. Network<br>d. Netmask<br>e. Host ID</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: a. Subnet ID (istilah terkait subnetting)</div></div>
+
+      <div class="item" data-answer="a">
+        <div class="q"><div><div class="question">20. Mengapa banyak pengguna mikrotik di Indonesia?</div><div class="options">a. Harga Terjangkau dan Fitur Lengkap<br>b. Mudah didapatkan<br>c. Tampilannya terlihat bagus<br>d. Tidak mudah rusak<br>e. Sulit dicari</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: a. Harga Terjangkau dan Fitur Lengkap</div></div>
+
+      <!-- 21-30 -->
+      <div class="item" data-answer="b">
+        <div class="q"><div><div class="question">21. Perbedaan mendasar antara Telnet dan SSH terletak pada aspek...</div><div class="options">a. Tampilan<br>b. Keamanan<br>c. Kecepatan<br>d. Keindahan<br>e. Kemudahan</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: b. Keamanan (SSH terenkripsi; Telnet tidak)</div></div>
+
+      <div class="item" data-answer="a">
+        <div class="q"><div><div class="question">22. Untuk instalasi Mikrotik RouterOS menggunakan netinstall, aplikasi yang dibutuhkan selain netinstall adalah...</div><div class="options">a. RouterOS<br>b. Kabel LAN<br>c. Mikrotik<br>d. Linux<br>e. Routerboard</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: a. RouterOS</div></div>
+
+      <div class="item" data-answer="c">
+        <div class="q"><div><div class="question">23. Sebelum melakukan proses remote (SSH/Telnet) yang perlu diketahui adalah...</div><div class="options">a. DNS Server<br>b. Mail Server<br>c. IP Address<br>d. Mac Address<br>e. Subnet mask</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: c. IP Address</div></div>
+
+      <div class="item" data-answer="d">
+        <div class="q"><div><div class="question">24. Alat yang berfungsi untuk menghubungkan dua jaringan dengan segmen yang berbeda adalah...</div><div class="options">a. Switch<br>b. Modem<br>c. Access Point<br>d. Router<br>e. Hub</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: d. Router</div></div>
+
+      <div class="item" data-answer="d">
+        <div class="q"><div><div class="question">25. Pada menu apakah jika kita ingin melakukan konfigurasi Identity pada router di mikrotik...</div><div class="options">a. Firewall<br>b. Menu File &gt; Syetem &gt; Identity<br>c. New Terminal<br>d. System &gt; Identity<br>e. System &gt; Identitas</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: d. System &gt; Identity</div></div>
+
+      <div class="item" data-answer="b">
+        <div class="q"><div><div class="question">26. Berikut ini contoh media transmisi yang menggunakan kabel, kecuali...</div><div class="options">a. Fiber Optic<br>b. SMTP<br>c. Coaxial / Coax / BNC<br>d. Wireless<br>e. STP</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: b. SMTP (bukan media, melainkan protokol)</div></div>
+
+      <div class="item" data-answer="c">
+        <div class="q"><div><div class="question">27. Fungsi dari Winbox adalah sebuah software yang digunakan untuk meremote Mikrotik ke mode...</div><div class="options">a. Terminal<br>b. OS<br>c. GUI (Graphical User Interface)<br>d. CLI<br>e. Semua Benar</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: c. GUI</div></div>
+
+      <div class="item" data-answer="e">
+        <div class="q"><div><div class="question">28. Berikut ini kelebihan mikrotik adalah....</div><div class="options">a. Banyak Fitur<br>b. Harga yang cukup Terjangkau<br>c. Dapat berperan sebagai Router<br>d. Mudah penggunaannya<br>e. Semua benar</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: e. Semua benar</div></div>
+
+      <div class="item" data-answer="b">
+        <div class="q"><div><div class="question">29. Definisi untuk daerah yang dilayani oleh satu access point wireless LAN standard 802.11 a/b/g adalah...</div><div class="options">a. netmask<br>b. hotspot<br>c. gateway<br>d. DNS<br>e. IP address</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban (umum): b. hotspot (area layanan nirkabel)</div></div>
+
+      <div class="item" data-answer="d">
+        <div class="q"><div><div class="question">30. Bandwidth dihitung dalam satuan...</div><div class="options">a. kdps<br>b. mega byte<br>c. byte/second<br>d. bit/second<br>e. mega byt</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: d. bit/second</div></div>
+
+      <!-- 31-35 -->
+      <div class="item" data-answer="c">
+        <div class="q"><div><div class="question">31. Jika diberikan data MAC addresses, maka alamat Mac Address Router Mikrotik tersebut adalah:</div><div class="options">a. C4:AD:34:B1:D6:E6<br>b. C4:AD:34:B1:D6:E7<br>c. C4:AD:34:B1:D6:EB<br>d. C4:AD:34:B1:D6:EE<br>e. C4:AD:34:B1:D6:E5</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban (perkiraan): c. C4:AD:34:B1:D6:EB</div></div>
+
+      <div class="item" data-answer="a">
+        <div class="q"><div><div class="question">32. DHCP merupakan singkatan dari...</div><div class="options">a. dynamic host configuration protocol<br>b. dynamical host configurasion protocol<br>c. dynamical host control panel<br>d. dynamic host configuration panel<br>e. diamond host configuration protocol</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: a. dynamic host configuration protocol</div></div>
+
+      <div class="item" data-answer="tbd">
+        <div class="q"><div><div class="question">33. (Soal bergambar tentang DHCP) Jika sumber internet menggunakan ether1, maka IP Address DHCP Client dari jaringan tersebut adalah.... (unggah gambar agar saya jawab tepat)</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: (perlu gambar/topologi untuk menentukan subnet &amp; DHCP)</div></div>
+
+      <div class="item" data-answer="tbd">
+        <div class="q"><div><div class="question">34. (Soal bergambar tentang bandwith test) Jika ingin mengetahui bandwidth di wlan dengan bandwith test, maka IP Address di test to diisi....</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: (perlu gambar/topologi atau data IP untuk jawaban akurat)</div></div>
+
+      <div class="item" data-answer="a">
+        <div class="q"><div><div class="question">35. Jika ingin mengetahui bandwidth receive adalah....</div><div class="options">a. Wlan<br>b. Eth1<br>c. Eth2<br>d. Eth3<br>e. Eth4</div></div><div><button class="showBtn">Tampilkan Jawaban</button></div></div><div class="answer">Jawaban: a. Wlan (jika yang dimaksud adalah interface wireless)</div></div>
+
+    </section>
+
+    <footer>
+      <div class="small">Sumber soal: Kisi-kisi Soal AIJ XII TKJ (file yang Anda unggah) fileciteturn1file0</div>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.showBtn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const item = btn.closest('.item');
+        item.classList.toggle('show');
+        btn.textContent = item.classList.contains('show') ? 'Sembunyikan Jawaban' : 'Tampilkan Jawaban';
+      });
+    });
+
+    const toggleAll = document.getElementById('toggleAll');
+    let allShown = false;
+    toggleAll.addEventListener('click', ()=>{
+      allShown = !allShown;
+      document.querySelectorAll('.item').forEach(it=>{
+        it.classList.toggle('show', allShown);
+        const b = it.querySelector('.showBtn');
+        b.textContent = allShown ? 'Sembunyikan Jawaban' : 'Tampilkan Jawaban';
+      });
+      toggleAll.textContent = allShown ? 'Sembunyikan Semua Jawaban' : 'Tampilkan Semua Jawaban';
+    });
+
+    document.getElementById('printBtn').addEventListener('click', ()=>window.print());
+  </script>
+</body>
+</html>
